@@ -1,19 +1,20 @@
-import { Route, Routes as RRDRoutes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "./view/public";
 import { ROUTES } from "./types/enums/Routes";
+import Layout from "./view/private/_layout";
+import Home from "./view/private/home/home";
 
-
-const Routes = () => {
+const RoutesComponent = () => {
   return (
-    <RRDRoutes>
-      <Route path="" element={""}>
+    <main className="w-screen h-screen bg-bg">
+      <Routes>
         <Route path={ROUTES.LOGIN} element={<Login />} />
-      </Route>
-      <Route path={ROUTES.DASHBOARD} element={""}>
-
-      </Route>
-    </RRDRoutes>
+        <Route path={ROUTES.DASHBOARD} element={<Layout />}>
+          <Route path={ROUTES.DASHBOARD} element={<Home />} />
+        </Route>
+      </Routes>
+    </main>
   );
 };
 
-export default Routes;
+export default RoutesComponent;

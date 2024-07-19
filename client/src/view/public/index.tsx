@@ -1,62 +1,41 @@
+import React from 'react';
+
 const Login = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg flex max-w-4xl">
-        <div className="p-8 w-full lg:w-1/2">
-          <div className="flex justify-center mb-6">
-            <img src="logo.png" alt="Logo" className="h-8 w-8" />
-          </div>
-          <h2 className="text-2xl font-semibold text-center text-green-600 mb-6">
-            Sign in to Diprella
-          </h2>
-          <div className="flex justify-center space-x-4 mb-6">
-            <button className="bg-gray-100 p-2 rounded-full">
-              <i className="fab fa-facebook-f"></i>
-            </button>
-            <button className="bg-gray-100 p-2 rounded-full">
-              <i className="fab fa-google"></i>
-            </button>
-            <button className="bg-gray-100 p-2 rounded-full">
-              <i className="fab fa-linkedin-in"></i>
-            </button>
-          </div>
-          <p className="text-center text-gray-500 mb-6">
-            or use your email account:
-          </p>
-          <form>
-            <div className="mb-4">
-              <label className="block text-gray-700">Email</label>
-              <input
-                type="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div className="mb-6">
-              <label className="block text-gray-700">Password</label>
-              <input
-                type="password"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div className="flex justify-between items-center mb-6">
-              <a href="#" className="text-sm text-gray-600 hover:underline">
-                Forgot your password?
-              </a>
-            </div>
-            <button className="w-full bg-green-600 text-white py-2 rounded-md">
-              Sign In
-            </button>
-          </form>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-100 to-teal-100">
+      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
+        <div className="text-center">
+          <img src="logo.png" alt="Logo" className="mx-auto h-12 w-auto" />
+        
         </div>
-        <div className="hidden lg:flex lg:w-1/2 bg-green-600 text-white items-center justify-center rounded-r-lg p-8">
+        <div className="space-y-6">
           <div className="text-center">
-            <h2 className="text-2xl font-semibold">Hello, Friend!</h2>
-            <p className="mt-4">
-              Enter your personal details and start journey with us
-            </p>
-            <button className="mt-6 px-6 py-2 border border-white text-white rounded-md">
-              SIGN UP
-            </button>
+            <h2 className="text-2xl font-bold text-gray-900">Login</h2>
+          </div>
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="email" className="sr-only">Email or phone number</label>
+              <input id="email" name="email" type="email" autoComplete="email" required className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Email or phone number" />
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">Password</label>
+              <input id="password" name="password" type="password" autoComplete="current-password" required className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password" />
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded" />
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900"> Remember me </label>
+              </div>
+              <div className="text-sm">
+                <a href="#" className="font-medium text-teal-600 hover:text-teal-500"> Forgot your password? </a>
+              </div>
+            </div>
+            <div>
+              <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"> Login </button>
+            </div>
+          </form>
+          <div className="text-center">
+            <a href="#" className="font-medium text-teal-600 hover:text-teal-500">Sign up</a>
           </div>
         </div>
       </div>
