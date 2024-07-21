@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "@/components/ui/navbar";
+import Navbar from "../../components/ui/navbar";
+
 import Loader from "@/components/ui/loader";
 import { ENDPOINTS } from "@/types/enums/endpoint";
 import { ROUTES } from "@/types/enums/Routes";
