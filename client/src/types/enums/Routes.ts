@@ -5,5 +5,5 @@ export enum ROUTES {
   PROFILE = ROUTES.DASHBOARD + "/profile",
 
   //Product
-  PRODUCTO = ROUTES.DASHBOARD + "producto",
+  PRODUCTO = ROUTES.DASHBOARD + "/producto",
 }

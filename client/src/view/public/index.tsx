@@ -1,5 +1,4 @@
 import { ROUTES } from "@/types/enums/Routes";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
@@ -57,8 +56,8 @@ const Login = () => {
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  {" "}
-                  Remember me{" "}
+                  
+                  Remember me
                 </label>
               </div>
               <div className="text-sm">
@@ -66,7 +65,7 @@ const Login = () => {
                   href="#"
                   className="font-medium text-teal-600 hover:text-teal-500"
                 >
-                  {" "}
+                
                   Forgot your password?{" "}
                 </a>
               </div>
@@ -76,7 +75,9 @@ const Login = () => {
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 onClick={handleInicio}
-              ></button>
+              >
+                Login
+              </button>
             </div>
           </form>
           <div className="text-center">
