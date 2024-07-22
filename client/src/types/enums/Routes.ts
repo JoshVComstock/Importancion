@@ -6,5 +6,6 @@ export enum ROUTES {
 
   //Product
   PRODUCTO = ROUTES.DASHBOARD + "/producto",
-  PRODUCTO_MOVIMIENTO = ROUTES.DASHBOARD + "/producto"+"/movimiento",
+  PRODUCTO_MOVIMIENTO = ROUTES.DASHBOARD + "/producto" + "/movimiento",
+  PRODUCTO_CATEGORIA = ROUTES.PRODUCTO + "/categoria",
 }

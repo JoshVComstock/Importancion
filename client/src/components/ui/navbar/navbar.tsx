@@ -4,20 +4,24 @@ import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
 import { mainNavItems, secondaryNavItems } from "./navItems";
 import { IconLogout } from "./icons";
+import Button from "@/components/common/button";
+import { ROUTES } from "@/types/enums/Routes";
 
 interface Props {
-  isDashboard?: boolean;
+  isExpanded?: boolean;
 }
 
-const Navbar = ({ isDashboard }: Props) => {
+const Navbar = ({ isExpanded }: Props) => {
   const navigate = useNavigate();
-  const [isExpanded, setIsExpanded] = useState(false);
+
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   const redirect = (path: string) => {
     navigate(path);
   };
-
+  const handleLogout = () => {
+    navigate(ROUTES.LOGIN);
+  };
   const handleItemClick = useCallback((path: string) => {
     setExpandedItem((prev) => (prev === path ? null : path));
   }, []);
@@ -29,7 +33,6 @@ const Navbar = ({ isDashboard }: Props) => {
           onClick={() => handleItemClick(item.path)}
           label={isExpanded ? item.label : ""}
           icon={item.icon}
-          
         />
         {item.children && expandedItem === item.path && (
           <div
@@ -55,8 +58,6 @@ const Navbar = ({ isDashboard }: Props) => {
       className={`${
         isExpanded ? "w-[240px] p-8" : "w-[80px] p-0 py-8"
       } bg-customWhite shadow-lg h-screen flex flex-col gap-2 transition-all duration-300 justify-center items-center`}
-      onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
     >
       <Perfil
         name="Mega"
@@ -74,6 +75,7 @@ const Navbar = ({ isDashboard }: Props) => {
         icon={IconLogout}
         important
       />
+      <Button onClick={handleLogout} text="Cerra sesión" />
     </nav>
   );
 };
