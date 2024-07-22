@@ -5,6 +5,11 @@ import { GiPayMoney } from "react-icons/gi";
 import { CiShoppingCart } from "react-icons/ci";
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { BsBox2 } from "react-icons/bs";
+import { PiArrowsLeftRight } from "react-icons/pi";
+import { HiOutlinePresentationChartLine } from "react-icons/hi2";
+import { GoGear } from "react-icons/go";
+
 
 export const IconHome = () => <RiHome2Line />;
 export const IconShop = () => <CiShoppingCart />;
@@ -13,3 +18,8 @@ export const IconBox = () => <BsBoxSeam />;
 export const IconMoney = () => <GiPayMoney />;
 export const IconPencil = () => <HiMiniPencilSquare />;
 export const IconLogout = () => <RiLogoutCircleLine />;
+export const IconBoxProduc = () => <BsBox2 />;
+export const IconDirectional = () => <PiArrowsLeftRight />;
+export const IconChartReport = () => <HiOutlinePresentationChartLine />;
+export const IconGear = () => <GoGear />;
+

@@ -17,7 +17,7 @@ export const ButtonNav = ({
       onClick={onClick}
       className={`flex justify-start items-center gap-2 hover:bg-primary100 w-full p-1 px-2 rounded-md ${
         important ? "bg-primary100 mt-auto " : "bg-transparent w-full" 
-      }  ${label?"":"justify-center w-[50%] mx-auto"} ` }
+      }  ${label?"":"justify-center "} ` }
       {...props}
     >
       {Icon && <Icon />}

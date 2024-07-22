@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
-import { mainNavItems, secondaryNavItems } from "./navItems";
+import { mainNavItems, NavItem, secondaryNavItems } from "./navItems";
 import { IconLogout } from "./icons";
 
 interface Props {
@@ -20,16 +20,18 @@ const Navbar = ({ isDashboard }: Props) => {
 
   const handleItemClick = useCallback((path: string) => {
     setExpandedItem((prev) => (prev === path ? null : path));
+    if(path){
+      redirect(path)
+    }
   }, []);
 
-  const renderNavItems = (items: typeof mainNavItems) =>
+  const renderNavItems = (items:NavItem[]) =>
     items.map((item) => (
       <div key={item.path} className="w-full">
         <ButtonNav
           onClick={() => handleItemClick(item.path)}
           label={isExpanded ? item.label : ""}
           icon={item.icon}
-          
         />
         {item.children && expandedItem === item.path && (
           <div
@@ -53,8 +55,8 @@ const Navbar = ({ isDashboard }: Props) => {
   return (
     <nav
       className={`${
-        isExpanded ? "w-[240px] p-8" : "w-[80px] p-0 py-8"
-      } bg-customWhite shadow-lg h-screen flex flex-col gap-2 transition-all duration-300 justify-center items-center`}
+        isExpanded ? "w-[240px] p-8" : "w-[80px] p-4 py-8"
+      } bg-customWhite shadow-lg h-screen flex flex-col gap-2   justify-center items-center  transition-all duration-300 ease-in `}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
