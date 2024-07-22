@@ -1,13 +1,20 @@
 import { ROUTES } from "@/types/enums/Routes";
 import { useNavigate } from "react-router-dom";
+import Back from "@assets/LoginBack.png";
+
 const Login = () => {
   const navigate = useNavigate();
+
   const handleInicio = () => {
     navigate(ROUTES.PRODUCTO);
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-100 to-teal-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
+    <div
+      className="min-h-screen flex items-center justify-start bg-cover bg-center"
+      style={{ backgroundImage: `url(${Back})` }}
+    >
+      <div className="w-full max-w-md p-8 space-y-8 rounded-lg ml-20">
         <div className="text-center">
           <img src="logo.png" alt="Logo" className="mx-auto h-12 w-auto" />
         </div>
@@ -50,22 +57,20 @@ const Login = () => {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-primary focus:ring-teal-500 border-gray-300 rounded"
                 />
                 <label
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  
                   Remember me
                 </label>
               </div>
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-teal-600 hover:text-teal-500"
+                  className="font-medium text-primary hover:text-primary100"
                 >
-                
                   Forgot your password?{" "}
                 </a>
               </div>
@@ -73,7 +78,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 onClick={handleInicio}
               >
                 Login
@@ -83,7 +88,7 @@ const Login = () => {
           <div className="text-center">
             <a
               href="#"
-              className="font-medium text-teal-600 hover:text-teal-500"
+              className="font-medium text-primary hover:text-primary100"
             >
               Sign up
             </a>
