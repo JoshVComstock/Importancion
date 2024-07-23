@@ -9,7 +9,7 @@ module.exports = {
         secundary: "#99BEE8",
         secundary100: "#C2C5FB",
         danger: "#F4CBDF",
-        customWhite: "##fff",
+        customWhite: "#fff",
       },
     },
   },

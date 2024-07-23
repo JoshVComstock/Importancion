@@ -12,3 +12,44 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Productos {
+  codigo             Int          @id
+  foto               String?
+  nombre             String
+  descripcion        String?
+  dimencion          String?
+  peso               String?
+  unidades           Int
+  cantidadCajas      Int
+  desperdicio        String?
+  merma              String?
+  costo              Decimal
+  tipoUnidadRelacion TipoUnidad   @relation(fields: [idTipoUnidad], references: [id])
+  idTipoUnidad       Int
+  categoriaRelacion  Categoria    @relation(fields: [idCategoria], references: [id])
+  idCategoria        Int
+  Inventario         Inventario[]
+}
+
+model TipoUnidad {
+  id          Int         @id
+  tipo        String
+  descripcion String?
+  Productos   Productos[]
+}
+
+model Inventario {
+  numeroItem         Int       @id
+  tipoUnidadRelacion Productos @relation(fields: [productoRelacion], references: [codigo])
+  productoRelacion   Int
+  fechaIngreso       DateTime?
+  fechaSalida        DateTime? // ---------- ojo 
+  estadoIngreso      Boolean?
+}
+
+model Categoria {
+  id               Int         @id
+  nombre_categoria String
+  Productos        Productos[]
+}

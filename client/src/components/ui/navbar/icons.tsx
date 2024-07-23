@@ -9,7 +9,7 @@ import { BsBox2 } from "react-icons/bs";
 import { PiArrowsLeftRight } from "react-icons/pi";
 import { HiOutlinePresentationChartLine } from "react-icons/hi2";
 import { GoGear } from "react-icons/go";
-
+import { CiCirclePlus } from "react-icons/ci";
 
 export const IconHome = () => <RiHome2Line />;
 export const IconShop = () => <CiShoppingCart />;
@@ -22,4 +22,5 @@ export const IconBoxProduc = () => <BsBox2 />;
 export const IconDirectional = () => <PiArrowsLeftRight />;
 export const IconChartReport = () => <HiOutlinePresentationChartLine />;
 export const IconGear = () => <GoGear />;
+export const IconMore = () => <CiCirclePlus />;
 

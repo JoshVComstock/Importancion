@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const handleInicio = () => {
-    navigate(ROUTES.PRODUCTO);
+    navigate(ROUTES.DASHBOARD);
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-100 to-teal-100">

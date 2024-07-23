@@ -20,14 +20,14 @@ const Navbar = ({ isDashboard }: Props) => {
 
   const handleItemClick = useCallback((path: string) => {
     setExpandedItem((prev) => (prev === path ? null : path));
-    if(path){
-      redirect(path)
+    if (path) {
+      redirect(path);
     }
   }, []);
 
-  const renderNavItems = (items:NavItem[]) =>
-    items.map((item) => (
-      <div key={item.path} className="w-full">
+  const renderNavItems = (items: NavItem[]) =>
+    items.map((item, i) => (
+      <div key={i} className="w-full">
         <ButtonNav
           onClick={() => handleItemClick(item.path)}
           label={isExpanded ? item.label : ""}
@@ -39,9 +39,9 @@ const Navbar = ({ isDashboard }: Props) => {
               isExpanded ? "" : "w-[80%] mx-auto"
             } py-2 bg-primary100 w-full rounded-lg  `}
           >
-            {item.children.map((child) => (
+            {item.children.map((child ,i) => (
               <ButtonNav
-                key={child.path}
+                key={i}
                 onClick={() => redirect(child.path)}
                 label={isExpanded ? child.label : ""}
                 icon={child.icon}
@@ -56,7 +56,7 @@ const Navbar = ({ isDashboard }: Props) => {
     <nav
       className={`${
         isExpanded ? "w-[240px] p-8" : "w-[80px] p-4 py-8"
-      } bg-customWhite shadow-lg h-screen flex flex-col gap-2   justify-center items-center  transition-all duration-300 ease-in `}
+      } bg-customWhite shadow-lg h-screen flex flex-col gap-2   justify-center items-center  transition-all duration-500 ease-in  `}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
