@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "@/components/ui/form";
 
-const Productos = () => {
+const ProductosForm = () => {
   const [formProduct, setFormProduct] = useState({
     nombre: "",
     photo: "",
@@ -52,4 +52,4 @@ const Productos = () => {
   );
 };
 
-export default Productos;
+export default ProductosForm;
