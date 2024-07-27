@@ -10,8 +10,8 @@ const Layout = () => {
   return (
     <section className="flex w-full bg-customWhite h-f">
       <Navbar isExpanded />
-      <label>Hola</label>
-      <main className="flex flex-col h-full pt-16 animate-[appear_1s]">
+      <main className="flex flex-col animate-[appear_1s]  w-full justify-start">
+        <nav className="bg-white h-14 shadow-md flex  items-center p-8" >Hola</nav>
         <Outlet />
       </main>
     </section>

@@ -1,15 +1,13 @@
 import { ROUTES } from "@/types/enums/Routes";
-import {
-  IconHome,
-  IconMessage,
-  IconBox,
-  IconMoney,
-  IconShop,
-  IconPencil,
-  IconProduct,
-} from "./icons";
+import { IconHome, IconMessage, IconBox, IconMoney, IconShop, IconPencil,IconProduct, IconBoxProduc, IconChartReport, IconDirectional, IconGear } from "./icons";
+export interface NavItem {
+  path: ROUTES;
+  label: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  children?: NavItem[];
+}
 
-export const mainNavItems = [
+export const mainNavItems:NavItem[] = [
   {
     path: ROUTES.INICIO,
     label: "Inicio",
@@ -24,7 +22,7 @@ export const mainNavItems = [
     ],
   },
   {
-    path: ROUTES.PRODUCTO,
+    path: ROUTES.MESSAGE,
     label: "Mensajes",
     icon: IconMessage,
   },

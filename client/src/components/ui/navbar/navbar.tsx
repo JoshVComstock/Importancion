@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
-import { mainNavItems, secondaryNavItems } from "./navItems";
+import { mainNavItems, NavItem, secondaryNavItems } from "./navItems";
 import { IconLogout } from "./icons";
 import Button from "@/components/common/button";
 import { ROUTES } from "@/types/enums/Routes";
@@ -24,11 +24,14 @@ const Navbar = ({ isExpanded }: Props) => {
   };
   const handleItemClick = useCallback((path: string) => {
     setExpandedItem((prev) => (prev === path ? null : path));
+    if (path) {
+      redirect(path);
+    }
   }, []);
 
-  const renderNavItems = (items: typeof mainNavItems) =>
-    items.map((item) => (
-      <div key={item.path} className="w-full">
+  const renderNavItems = (items: NavItem[]) =>
+    items.map((item, i) => (
+      <div key={i} className="w-full">
         <ButtonNav
           onClick={() => handleItemClick(item.path)}
           label={isExpanded ? item.label : ""}
@@ -40,9 +43,9 @@ const Navbar = ({ isExpanded }: Props) => {
               isExpanded ? "" : "w-[80%] mx-auto"
             } py-2 bg-primary100 w-full rounded-lg  `}
           >
-            {item.children.map((child) => (
+            {item.children.map((child ,i) => (
               <ButtonNav
-                key={child.path}
+                key={i}
                 onClick={() => redirect(child.path)}
                 label={isExpanded ? child.label : ""}
                 icon={child.icon}

@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleInicio = () => {
-    navigate(ROUTES.PRODUCTO);
+    navigate(ROUTES.DASHBOARD);
   };
 
   return (
