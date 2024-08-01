@@ -1,9 +1,10 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
-import { mainNavItems, NavItem, secondaryNavItems } from "./navItems";
+import { mainNavItems, secondaryNavItems } from "./navItems";
 import { IconLogout } from "./icons";
+import { NavItem } from "./navBarTypes";
 
 interface Props {
   isDashboard?: boolean;
@@ -80,4 +81,4 @@ const Navbar = ({ isDashboard }: Props) => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

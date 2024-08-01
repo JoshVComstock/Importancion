@@ -1,9 +1,4 @@
-interface ButtonNavProps {
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  label: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  important?: boolean;
-}
+import { ButtonNavProps } from "./navBarTypes";
 
 export const ButtonNav = ({
   icon: Icon,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "@/components/ui/form";
+import Form from "@/components/ui/form/form";
 
 const Productos = () => {
   const [formProduct, setFormProduct] = useState({

@@ -11,7 +11,7 @@ const Perfil: React.FC<PerfilProps> = ({ name, photo, description }) => {
     <section
       className={`${
         description ? "" : "flex-col"
-      } w-full flex gap-2 justify-center items-center `}
+      } w-full flex gap-2 justify-center items-center  `}
     >
       {photo ? (
         <img src={photo} alt={name} className="w-12 h-12 rounded-lg" />

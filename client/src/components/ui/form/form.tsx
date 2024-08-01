@@ -1,25 +1,8 @@
 import React from "react";
-import Input from "./inputs";
-import { IconMore } from "./navbar/icons";
-import { Button } from "./button";
-
-interface InputData {
-  label: string;
-  type: string;
-  placeholder: string;
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  value: string;
-  required?: boolean;
-  name: string;
-}
-
-interface FormProps {
-  action: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  title: string;
-  inputs: InputData[];
-}
+import Input from "../inputs";
+import { IconMore } from "../navbar/icons";
+import { Button } from "../button";
+import { FormProps } from "./formTypes";
 
 const Form: React.FC<FormProps> = ({
   action,
@@ -37,9 +20,7 @@ const Form: React.FC<FormProps> = ({
     >
       <section className="flex justify-between w-full">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <Button onClick={onClick} label={action} icon={IconMore}/>
-
-
+        <Button onClick={onClick} label={action} icon={IconMore} />
       </section>
 
       {inputs.map((input, index) => (

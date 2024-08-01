@@ -1,11 +1,7 @@
 import { ROUTES } from "@/types/enums/Routes";
 import { IconHome, IconMessage, IconBox, IconMoney, IconShop, IconPencil, IconBoxProduc, IconChartReport, IconDirectional, IconGear } from "./icons";
-export interface NavItem {
-  path: ROUTES;
-  label: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  children?: NavItem[];
-}
+import { NavItem } from "./navBarTypes";
+
 
 export const mainNavItems:NavItem[] = [
   {
