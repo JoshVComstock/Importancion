@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
 import { mainNavItems, NavItem, secondaryNavItems } from "./navItems";
-import { IconLogout } from "./icons";
+import { IconLogout } from "../icons";
 import Button from "@/components/common/button";
 import { ROUTES } from "@/types/enums/Routes";
 
@@ -43,7 +43,7 @@ const Navbar = ({ isExpanded }: Props) => {
               isExpanded ? "" : "w-[80%] mx-auto"
             } py-2 bg-primary100 w-full rounded-lg  `}
           >
-            {item.children.map((child ,i) => (
+            {item.children.map((child, i) => (
               <ButtonNav
                 key={i}
                 onClick={() => redirect(child.path)}

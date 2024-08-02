@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaSearch, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import {
   useReactTable,
@@ -11,6 +10,12 @@ import {
   getFilteredRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconSearch,
+} from "@/components/ui/icons";
+import ButtonArrow from "./buttonarrow";
 
 interface Props {
   columns: ColumnDef<any, any>[];
@@ -39,7 +44,7 @@ const TableContainer = ({ columns, data }: Props) => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div className="mb-4 flex items-center">
-        <FaSearch className="w-5 h-5 text-gray-500 absolute ml-3" />
+        <IconSearch />
         <input
           type="text"
           className="block pl-10 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
@@ -109,33 +114,33 @@ const TableContainer = ({ columns, data }: Props) => {
           ))}
         </tfoot>
       </table>
-      <div className="mt-4 flex justify-between items-center">
+      <div className="flex  items-center">
+        <ButtonArrow table={table} jump={0} />
+        {/* 
         <button
           onClick={() => table.setPageIndex(0)}
           className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
         >
-          <FaChevronLeft className="w-5 h-5" />
-          <FaChevronLeft className="w-5 h-5" />
+          <IconArrowLeft />
         </button>
         <button
           onClick={() => table.previousPage()}
           className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
         >
-          <FaChevronLeft className="w-5 h-5" />
+          <IconArrowLeft />
         </button>
         <button
           onClick={() => table.nextPage()}
           className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
         >
-          <FaChevronRight className="w-5 h-5" />
+          <IconArrowRight />
         </button>
         <button
           onClick={() => table.setPageIndex(table.getPageCount() - 1)}
           className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
         >
-          <FaChevronRight className="w-5 h-5" />
-          <FaChevronRight className="w-5 h-5" />
-        </button>
+          <IconArrowRight />
+        </button> */}
       </div>
     </div>
   );

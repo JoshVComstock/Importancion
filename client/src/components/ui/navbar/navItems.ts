@@ -1,5 +1,5 @@
 import { ROUTES } from "@/types/enums/Routes";
-import { IconHome, IconMessage, IconBox, IconMoney, IconShop, IconPencil,IconProduct, IconBoxProduc, IconChartReport, IconDirectional, IconGear } from "./icons";
+import { IconHome, IconMessage, IconBox, IconMoney, IconShop, IconPencil,IconProduct, IconBoxProduc, IconChartReport, IconDirectional, IconGear } from "../icons";
 export interface NavItem {
   path: ROUTES;
   label: string;

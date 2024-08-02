@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./inputs";
-import { IconMore } from "./navbar/icons";
+import { IconMore } from "./icons";
 import { Button } from "./button";
 
 interface InputData {
@@ -37,9 +37,7 @@ const Form: React.FC<FormProps> = ({
     >
       <section className="flex justify-between w-full">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <Button onClick={onClick} label={action} icon={IconMore}/>
-
-
+        <Button onClick={onClick} label={action} icon={IconMore} />
       </section>
 
       {inputs.map((input, index) => (

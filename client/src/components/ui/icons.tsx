@@ -11,6 +11,7 @@ import { PiArrowsLeftRight } from "react-icons/pi";
 import { HiOutlinePresentationChartLine } from "react-icons/hi2";
 import { GoGear } from "react-icons/go";
 import { CiCirclePlus } from "react-icons/ci";
+import { FaSearch, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export const IconHome = () => <RiHome2Line />;
 export const IconShop = () => <CiShoppingCart />;
@@ -25,4 +26,6 @@ export const IconDirectional = () => <PiArrowsLeftRight />;
 export const IconChartReport = () => <HiOutlinePresentationChartLine />;
 export const IconGear = () => <GoGear />;
 export const IconMore = () => <CiCirclePlus />;
-
+export const IconSearch = () => <FaSearch />;
+export const IconArrowLeft = () => <FaChevronLeft />;
+export const IconArrowRight = () => <FaChevronRight />;
