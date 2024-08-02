@@ -6,7 +6,7 @@ interface Props {
 }
 const ModuloPage: React.FC<Props> = ({ title, children }) => {
   return (
-    <div className="flex flex-col gap-2 p-4">
+    <div className="flex flex-col gap-2 p-4 w-full">
       <head className="flex gap-2 items-center">
         <h3 className=" text-4xl font-bold">{title}</h3>
       </head>

@@ -11,7 +11,7 @@ import Config from "./view/private/inventory/config";
 
 const RoutesComponent = () => {
   return (
-    <main className="w-screen h-screen bg-bg">
+    <main className="w-full h-screen bg-bg">
       <Routes>
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.DASHBOARD} element={<Layout />}>

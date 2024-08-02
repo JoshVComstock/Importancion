@@ -10,12 +10,9 @@ import {
   getFilteredRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
-import {
-  IconArrowLeft,
-  IconArrowRight,
-  IconSearch,
-} from "@/components/ui/icons";
-import ButtonArrow from "./buttonarrow";
+import { IconSearch } from "@/components/ui/icons";
+import PaginationControls from "./sectionPagination";
+// import buttonArrow from "./buttonarrow";
 
 interface Props {
   columns: ColumnDef<any, any>[];
@@ -33,6 +30,12 @@ const TableContainer = ({ columns, data }: Props) => {
       sorting,
       globalFilter: filtering,
     },
+    initialState: {
+      pagination: {
+        pageIndex: 0,
+        pageSize: 20,
+      },
+    },
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -42,12 +45,12 @@ const TableContainer = ({ columns, data }: Props) => {
   });
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div className="w-full">
       <div className="mb-4 flex items-center">
         <IconSearch />
         <input
           type="text"
-          className="block pl-10 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+          className=""
           placeholder="Buscar..."
           value={filtering}
           onChange={(e) => setFiltering(e.target.value)}
@@ -60,7 +63,7 @@ const TableContainer = ({ columns, data }: Props) => {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="px-6 py-3 cursor-pointer hover:bg-gray-200"
+                  className="px-6 py-3 cursor-pointer hover:bg-gray-300"
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder ? null : (
@@ -114,34 +117,7 @@ const TableContainer = ({ columns, data }: Props) => {
           ))}
         </tfoot>
       </table>
-      <div className="flex  items-center">
-        <ButtonArrow table={table} jump={0} />
-        {/* 
-        <button
-          onClick={() => table.setPageIndex(0)}
-          className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-        >
-          <IconArrowLeft />
-        </button>
-        <button
-          onClick={() => table.previousPage()}
-          className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-        >
-          <IconArrowLeft />
-        </button>
-        <button
-          onClick={() => table.nextPage()}
-          className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-        >
-          <IconArrowRight />
-        </button>
-        <button
-          onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-          className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-        >
-          <IconArrowRight />
-        </button> */}
-      </div>
+      <PaginationControls  table={table} />
     </div>
   );
 };
