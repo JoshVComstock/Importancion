@@ -29,3 +29,4 @@ export const IconMore = () => <CiCirclePlus />;
 export const IconSearch = () => <FaSearch />;
 export const IconArrowLeft = () => <FaChevronLeft />;
 export const IconArrowRight = () => <FaChevronRight />;
+
