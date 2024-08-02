@@ -4,7 +4,7 @@ import { ButtonNav } from "./buttonNav";
 import Perfil from "./perfil";
 import { mainNavItems, NavItem, secondaryNavItems } from "./navItems";
 import { IconLogout } from "../icons";
-import Button from "@/components/common/button";
+// import Button from "@/components/common/button";
 import { ROUTES } from "@/types/enums/Routes";
 
 interface Props {
@@ -18,9 +18,6 @@ const Navbar = ({ isExpanded }: Props) => {
 
   const redirect = (path: string) => {
     navigate(path);
-  };
-  const handleLogout = () => {
-    navigate(ROUTES.LOGIN);
   };
   const handleItemClick = useCallback((path: string) => {
     setExpandedItem((prev) => (prev === path ? null : path));
@@ -41,7 +38,7 @@ const Navbar = ({ isExpanded }: Props) => {
           <div
             className={`${
               isExpanded ? "" : "w-[80%] mx-auto"
-            } py-2 bg-primary100 w-full rounded-lg  `}
+            } py-2 bg-gray-200 w-full rounded-lg  `}
           >
             {item.children.map((child, i) => (
               <ButtonNav
@@ -49,6 +46,7 @@ const Navbar = ({ isExpanded }: Props) => {
                 onClick={() => redirect(child.path)}
                 label={isExpanded ? child.label : ""}
                 icon={child.icon}
+                
               />
             ))}
           </div>
@@ -59,26 +57,25 @@ const Navbar = ({ isExpanded }: Props) => {
   return (
     <nav
       className={`${
-        isExpanded ? "w-[240px] p-8" : "w-[80px] p-0 py-8"
-      } bg-customWhite shadow-lg h-screen flex flex-col gap-2 transition-all duration-300 justify-center items-center`}
+        isExpanded ? "w-[320px] p-8" : "w-[80px] p-0 py-8"
+      } bg-customWhite shadow-lg h-screen flex flex-col transition-all duration-300 justify-center items-center gap-4`}
     >
       <Perfil
         name="Mega"
         photo=""
         description={`${isExpanded ? "Importaciones" : ""}`}
       />
-      <hr className="my-4" />
-      {renderNavItems(mainNavItems)}
-      <hr className="my-2" />
+      <article className="w-full py-4 flex gap-2 flex-col">
+        {renderNavItems(mainNavItems)}
+      </article>
       {renderNavItems(secondaryNavItems)}
-      <hr className="my-2" />
       <ButtonNav
-        onClick={() => redirect("")}
+        onClick={() => redirect(ROUTES.LOGIN)}
         label={isExpanded ? "Cerrar sesión" : ""}
         icon={IconLogout}
         important
       />
-      <Button onClick={handleLogout} text="Cerra sesión" />
+      {/* <Button onClick={handleLogout} text="Cerra sesión" /> */}
     </nav>
   );
 };

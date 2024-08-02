@@ -7,7 +7,7 @@ const Layout = () => {
       <Navbar isExpanded />
       <main className="flex flex-col animate-[appear_1s]  w-full justify-start ">
         <nav className="bg-white h-8 shadow-md flex  items-center p-6">
-          Hola
+          <button></button>
         </nav>
         <Outlet />
       </main>
