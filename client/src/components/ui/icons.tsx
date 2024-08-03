@@ -11,7 +11,17 @@ import { PiArrowsLeftRight } from "react-icons/pi";
 import { HiOutlinePresentationChartLine } from "react-icons/hi2";
 import { GoGear } from "react-icons/go";
 import { CiCirclePlus } from "react-icons/ci";
-import { FaSearch, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaSearch,
+  FaChevronLeft,
+  FaChevronRight,
+  FaAlignRight,
+} from "react-icons/fa";
+import {
+  TbLayoutSidebarLeftExpandFilled,
+  TbLayoutSidebarRightExpandFilled,
+} from "react-icons/tb";
+import { IoIosClose } from "react-icons/io";
 
 export const IconHome = () => <RiHome2Line />;
 export const IconShop = () => <CiShoppingCart />;
@@ -29,4 +39,7 @@ export const IconMore = () => <CiCirclePlus />;
 export const IconSearch = () => <FaSearch />;
 export const IconArrowLeft = () => <FaChevronLeft />;
 export const IconArrowRight = () => <FaChevronRight />;
-
+export const IconHidenSideBar = () => <TbLayoutSidebarLeftExpandFilled />;
+export const IconLowSideBar = () => <TbLayoutSidebarRightExpandFilled />;
+export const IconDrawer = () => <FaAlignRight />;
+export const IconClose = () => <IoIosClose />;
