@@ -8,8 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node dist/server.js",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only src/service-inventory/config/server.ts",
+    "dev": "ts-node config/server.ts",
     "build": "tsc"
   },
   "keywords": [],
