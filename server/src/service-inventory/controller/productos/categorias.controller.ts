@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
-import UnidadesService from "../service/unidadesService";
-import { NotFoundError } from "../common/validators/customErrors";
+import CategoriaService from "../../service/categoriaService";
+import { NotFoundError } from "../../common/validators/customErrors";
 
-class ProductoController {
-  private unidadesService: UnidadesService;
+class CategoriaController {
+  private categoriaService: CategoriaService;
 
-  constructor(unidadesService: UnidadesService) {
-    this.unidadesService = unidadesService;
+  constructor(categoriaService: CategoriaService) {
+    this.categoriaService = categoriaService;
   }
 
   async getItems(req: Request, res: Response) {
-    const items = await this.unidadesService.getItems();
+    const items = await this.categoriaService.getItems();
     if (!items) {
       throw new NotFoundError("Items not found");
     }
@@ -18,13 +18,12 @@ class ProductoController {
   }
 
   async addItem(req: Request, res: Response) {
-    console.log(req.body);
-    const item = await this.unidadesService.addItem(req.body);
+    const item = await this.categoriaService.addItem(req.body);
     res.status(201).json(item);
   }
 
   async updateItem(req: Request, res: Response) {
-    const updatedItem = await this.unidadesService.updateItem(
+    const updatedItem = await this.categoriaService.updateItem(
       Number(req.params.id),
       req.body
     );
@@ -35,7 +34,7 @@ class ProductoController {
   }
 
   async deleteItem(req: Request, res: Response) {
-    const deleted = await this.unidadesService.deleteItem(
+    const deleted = await this.categoriaService.deleteItem(
       Number(req.params.id)
     );
     if (!deleted) {
@@ -45,4 +44,4 @@ class ProductoController {
   }
 }
 
-export default ProductoController;
+export default CategoriaController;

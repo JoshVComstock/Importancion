@@ -1,6 +1,6 @@
 import { Router } from "express";
 import InventoryService from "../service/productosService";
-import InventoryController from "../controller/productos.controller";
+import InventoryController from "../controller/productos/productos.controller";
 
 const router = Router();
 const inventoryService = new InventoryService();

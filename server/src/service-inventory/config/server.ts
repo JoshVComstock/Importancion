@@ -11,7 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, `.env.${env}`) });
 const app = express();
 const PORT = process.env.PORT || 3000;
 const preficURL = "/api";
-
+app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("Hola josh a chambear!");
 });

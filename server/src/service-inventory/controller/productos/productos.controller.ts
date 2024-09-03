@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import ProdcutoService from "../service/productosService";
-import { NotFoundError } from "../common/validators/customErrors";
+import ProdcutoService from "../../service/productosService";
+import { NotFoundError } from "../../common/validators/customErrors";
 
 class ProductoController {
   private prodcutoService: ProdcutoService;

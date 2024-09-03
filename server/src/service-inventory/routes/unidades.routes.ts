@@ -1,5 +1,5 @@
 import { Router } from "express";
-import UnidadesController from "../controller/unidades.controller";
+import UnidadesController from "../controller/generales/unidades.controller";
 import UnidadesService from "../service/unidadesService";
 
 const router = Router();
