@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
-import UnidadesService from "../../service/unidadesService";
 import { NotFoundError } from "../../common/validators/customErrors";
+import TipoProductoService from "../../service/tipoProductosService";
 
-class UnidadesController {
-  private unidadesService: UnidadesService;
+class TipoProductoController {
+  private tipoProductoService: TipoProductoService;
 
-  constructor(unidadesService: UnidadesService) {
-    this.unidadesService = unidadesService;
+  constructor(tipoProductoService: TipoProductoService) {
+    this.tipoProductoService = tipoProductoService;
   }
 
   async getItems(req: Request, res: Response) {
-    const items = await this.unidadesService.getItems();
+    const items = await this.tipoProductoService.getItems();
     if (!items) {
       throw new NotFoundError("Items not found");
     }
@@ -18,13 +18,12 @@ class UnidadesController {
   }
 
   async addItem(req: Request, res: Response) {
-    console.log(req.body);
-    const item = await this.unidadesService.addItem(req.body);
+    const item = await this.tipoProductoService.addItem(req.body);
     res.status(201).json(item);
   }
 
   async updateItem(req: Request, res: Response) {
-    const updatedItem = await this.unidadesService.updateItem(
+    const updatedItem = await this.tipoProductoService.updateItem(
       Number(req.params.id),
       req.body
     );
@@ -35,7 +34,7 @@ class UnidadesController {
   }
 
   async deleteItem(req: Request, res: Response) {
-    const deleted = await this.unidadesService.deleteItem(
+    const deleted = await this.tipoProductoService.deleteItem(
       Number(req.params.id)
     );
     if (!deleted) {
@@ -45,4 +44,4 @@ class UnidadesController {
   }
 }
 
-export default UnidadesController;
+export default TipoProductoController;
