@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src", 
     "paths": {
       "@routes/*": ["modules/inventary/routes/*"],
       "@controller/*": ["../controller/productos/*"],
