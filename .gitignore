@@ -10,7 +10,6 @@ lerna-debug.log*
 
 node_modules
 /back/node_modules
-/back/src/service-auth/node_modules
 
 **/node_modules
 
