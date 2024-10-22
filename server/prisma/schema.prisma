@@ -8,11 +8,19 @@ datasource db {
 }
 
 model User {
-  id_user   Int         @id @default(autoincrement())
-  email     String      @unique @db.VarChar(100)
-  password  String      @db.VarChar(150)
-  rol       String      @db.VarChar(80)
+  id_user  Int    @id @default(autoincrement())
+  email    String @unique @db.VarChar(100)
+  password String @db.VarChar(150)
+
   productos productos[]
+  idRol     Int
+  R_Rol     rol         @relation(fields: [idRol], references: [id_rol])
+}
+
+model rol {
+  id_rol Int    @id @default(autoincrement())
+  rol    String
+  User   User[]
 }
 
 // --------------------productos -------------------
@@ -33,7 +41,7 @@ model productos {
   R_Categoria        categorias     @relation(fields: [idCategoria], references: [id_categoria])
   idLote             Int
   R_Lote             lote           @relation(fields: [idLote], references: [id_lote])
-  colores            String[]       
+  colores            String[]
   volumen            Float
   alto               Float
   ancho              Float
@@ -48,24 +56,25 @@ model tipoProducto {
   productos       productos[]
 }
 
-model precioProducto {
-  id_precioProducto  Int   @id @default(autoincrement())
-  idProducto         Int
-  precioVentaDirecta Float
-  precioVenta        Float
-  precioMayor        Float
-  utilidad           Float
-}
+// model precioProducto {
+//   id_precioProducto  Int   @id @default(autoincrement())
+//   idProducto         Int
+//   precioVentaDirecta Float
+//   precioVenta        Float
+//   precioMayor        Float
+//   utilidad           Float
+// }
 
 model unidades {
   id_unidades Int    @id @default(autoincrement())
   tipoUnidad  String @db.VarChar(50)
 }
 
-model multimedia {
-  id_multimedia Int    @id @default(autoincrement())
-  urlRecurso    String @db.VarChar(200)
-}
+//  -------------por si necesita algun recurso 
+// model multimedia {
+//   id_multimedia Int    @id @default(autoincrement())
+//   urlRecurso    String @db.VarChar(200)
+// }
 
 model categorias {
   id_categoria Int         @id @default(autoincrement())
@@ -79,6 +88,13 @@ model lote {
   NumSerial String
   productos productos[]
 }
+
+// ------------------------ Recepciones Producots 
+model recepciones {
+  id_recepciones Int @id @default(autoincrement())
+}
+
+//  ------------ventas 
 
 model ventas {
   id_ventas      Int          @id @default(autoincrement())
